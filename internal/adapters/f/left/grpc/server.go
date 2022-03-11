@@ -12,6 +12,10 @@ type Adapter struct {
 	api ports.APIPorts
 }
 
+func NewAdapter(api ports.APIPorts) *Adapter {
+	return &Adapter{api}
+}
+
 func (sv Adapter) Run(port string) error {
 	lis, err := net.Listen("tcp", port)
 	if err != nil {
