@@ -3,8 +3,8 @@ package grpc
 import (
 	"net"
 
-	"github.com/404th/hex_arch/adapters/f/left/grpc/pb"
-	"github.com/404th/hex_arch/ports"
+	"github.com/404th/hex_arch/internal/adapters/f/left/grpc/pb"
+	"github.com/404th/hex_arch/internal/ports"
 	"google.golang.org/grpc"
 )
 
@@ -12,7 +12,7 @@ type Adapter struct {
 	api ports.APIPorts
 }
 
-func (sv *Adapter) Run(port string) error {
+func (sv Adapter) Run(port string) error {
 	lis, err := net.Listen("tcp", port)
 	if err != nil {
 		return err
@@ -20,7 +20,7 @@ func (sv *Adapter) Run(port string) error {
 
 	grpcServer := grpc.NewServer()
 
-	pb.RegisterArithmeticServiceServer(grpcServer, sv.api)
+	pb.RegisterArithmeticServiceServer(grpcServer, sv)
 
 	if err = grpcServer.Serve(lis); err != nil {
 		return err

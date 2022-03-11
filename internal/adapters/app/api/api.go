@@ -1,8 +1,6 @@
 package api
 
-import (
-	"github.com/404th/hex_arch/ports"
-)
+import "github.com/404th/hex_arch/internal/ports"
 
 type Adapter struct {
 	arith ports.ArithPorts

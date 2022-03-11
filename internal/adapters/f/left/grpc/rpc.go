@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/404th/hex_arch/adapters/f/left/grpc/pb"
+	"github.com/404th/hex_arch/internal/adapters/f/left/grpc/pb"
 )
 
 func (ga Adapter) GetAddition(ctx context.Context, req *pb.OperationDetails) (*pb.Answer, error) {
