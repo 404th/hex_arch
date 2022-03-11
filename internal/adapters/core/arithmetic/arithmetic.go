@@ -1,24 +1,24 @@
-package adapter
+package arithmetic
 
-type ArithmeticAdapter struct {
+type Adapter struct {
 }
 
-func NewArithmeticAdapter() *ArithmeticAdapter {
-	return &ArithmeticAdapter{}
+func NewAdapter() *Adapter {
+	return &Adapter{}
 }
 
-func (arith *ArithmeticAdapter) Addition(a int32, b int32) (int32, error) {
+func (aa *Adapter) Addition(a, b int32) (int32, error) {
 	return a + b, nil
 }
 
-func (arith *ArithmeticAdapter) Subtraction(a int32, b int32) (int32, error) {
+func (aa *Adapter) Subtraction(a, b int32) (int32, error) {
 	return a - b, nil
 }
 
-func (arith *ArithmeticAdapter) Multiplication(a int32, b int32) (int32, error) {
+func (aa *Adapter) Multiplication(a, b int32) (int32, error) {
 	return a * b, nil
 }
 
-func (arith *ArithmeticAdapter) Division(a int32, b int32) (int32, error) {
+func (aa *Adapter) Division(a, b int32) (int32, error) {
 	return a / b, nil
 }
